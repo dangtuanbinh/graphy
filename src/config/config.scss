@@ -1,0 +1,98 @@
+
+//-----COLORS BACKGROUND------
+$primary:#4968ee;
+$secondary: #1aa9c2;
+$paper: #ffffff;
+$light: #f1f1f1;
+$darkGrey: #353535;
+$grey: #989586;
+$lightGrey:#dadccb;
+$pink:#ec5252;
+$fade:#fbfbf8;
+$dark:#222222;
+$darkBlue:#0a2029;
+
+//-----COLORS TEXT------
+$textPrimary: #4968ee;
+$textSecondary: #1aa9c2;
+$textWhite: #ffffff;
+$textGrey: #5f5f5f;
+$textDarkGrey: #73726c;
+$textPink:#ec5252;
+$textLightGrey: #d6d6d6;
+$textBlack:#000000;
+
+//-------FONT SIZE-------
+$body1: 10px;
+$body2: 12px;
+$subtitle: 14px;
+$h6: 16px;
+$h5: 18px;
+$h4: 20px;
+$h3: 30px;
+$h2: 40px;
+$h1: 44px;
+
+//------FONT WEIGHT--------
+$fwBold: 700;
+$fwMedium: 600;
+$fwRegular: 400;
+$fwLight: 300;
+
+//----------SPACING---------
+$spacing: 10px;
+
+// Mixin
+@mixin Text($color, $fs, $fw, $lh) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+@mixin Button($bg, $b, $br, $pad){
+    background-color: $bg;
+    border:$b;
+    border-radius: $br;
+    padding: $pad;
+}
+
+
+$xs:575.8px;
+$sm:600px;
+$md:767px;
+$lg:1280px;
+$xl:1080px;
+
+
+@mixin MediaQuery($size){
+  @media screen and (max-width: $size){
+    @content;
+  }
+}
+
+@mixin ComponentPadding($value){
+  padding: $value 0;
+}
+
+@mixin Container(){
+  padding: 0 24px;
+}
+
+@mixin TransitionValue(){
+  transition: all .3s ease;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+// End of Mixin
+
+// Function
+@function spacing($numb){
+    @return $numb*$spacing;
+}
+// End of function

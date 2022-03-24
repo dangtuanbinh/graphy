@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,mBAAmB,CAAA;EACf,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,QAAQ;EACzB,QAAQ,EAAE,QAAQ;CACrB;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,IAAI;EACX,MAAM,ECoFE,IAAc;EDnFtB,gBAAgB,ECPZ,OAAO;EDQX,MAAM,ECkFE,KAAc,CDlFA,KAAK;EAC3B,aAAa,ECiFL,KAAc;EDhFtB,SAAS,ECgFD,IAAc;ED/EtB,YAAY,EC+EJ,IAAc;CD9EzB;;AACD,AAAA,KAAK,CAAA;EACD,YAAY,EC4EJ,IAAc;ED3EtB,QAAQ,EAAE,QAAQ;CACrB",
+    "sources": [
+        "index.scss",
+        "../../../config/config.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

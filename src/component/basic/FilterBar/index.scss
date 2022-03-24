@@ -1,0 +1,19 @@
+@import "../../../config/config.scss";
+
+.filterBarContainer {
+  width: 100%;
+  margin-top: spacing(2);
+}
+.button{
+    width: spacing(10);
+    height: spacing(3.5);
+    @include Text($textBlack, $h6,$fwRegular,none);
+    margin-right: spacing(2);
+    border-radius: spacing(36);
+    cursor: pointer;
+    border: spacing(0.09);
+    &:hover {
+        background-color: $dark;
+        color: $textWhite;
+    }
+}

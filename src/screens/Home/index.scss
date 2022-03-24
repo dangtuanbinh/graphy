@@ -1,0 +1,15 @@
+@import "../../config/config.scss";
+
+.homeContainer {
+  padding: spacing(1) spacing(2) spacing(0) spacing(2);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+  .homeContainer {
+    padding: 0 spacing(1) 0 spacing(1);
+    width: 100%;
+  }
+}
+/* End of responsive */

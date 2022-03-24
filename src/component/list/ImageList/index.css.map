@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAA;EACN,KAAK,EC4FG,KAAc;ED3FtB,MAAM,EC2FE,KAAc;ED1FtB,gBAAgB,ECHX,OAAO;EDIZ,aAAa,ECyFL,IAAc;EDxFtB,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "index.scss",
+        "../../../config/config.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}

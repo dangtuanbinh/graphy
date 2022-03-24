@@ -1,0 +1,33 @@
+@import "../../../config/config.scss";
+
+.headerContainer {
+    width: 100%;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.searchBar{
+    flex: 0.8;
+    margin-left: spacing(2);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .headerContainer{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .searchBar{
+        flex: none;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 spacing(2) 0 spacing(2)
+    }
+    .title h1 {
+        font-size: spacing(4);
+    }
+}
+
+/* End of responsive */

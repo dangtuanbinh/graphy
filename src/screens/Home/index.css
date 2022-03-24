@@ -1,0 +1,14 @@
+.homeContainer {
+  padding: 10px 20px 0px 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .homeContainer {
+    padding: 0 10px 0 10px;
+    width: 100%;
+  }
+}
+
+/* End of responsive */
+/*# sourceMappingURL=index.css.map */

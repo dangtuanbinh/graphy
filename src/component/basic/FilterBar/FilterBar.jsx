@@ -19,8 +19,8 @@ const filterButton = [
 const FilterBar = () => {
   return (
     <div className="filterBarContainer">
-      {filterButton.map((f) => (
-        <button className="button">
+      {filterButton.map((f, index) => (
+        <button key={index} className="button">
           {f.title}
         </button>
       ))}

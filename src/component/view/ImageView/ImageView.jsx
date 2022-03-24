@@ -1,40 +1,38 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./index.scss";
 import ImageList from "../../list/ImageList/ImageList";
 import ImageModal from "../../modal/ImageModal/ImageModal";
+import { getImageList } from "../../../state/actions/imageAction";
 
 const ImageView = () => {
-  const [open,setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getImageList());
+  }, []);
 
-  const openModal = () => {
-    setOpen(true)
-    console.log("Test")
-  }
+  const imageList = useSelector((state) => state.imageReducer.imageList);
 
-  const closeModal = () => setOpen(false)
+  const openModal = () => setOpen(true);
+
+  const closeModal = () => setOpen(false);
+
+  const renderImageList = () => {
+    if (!imageList) return null;
+    return imageList?.map((i) => 
+      (
+        <div key={i.id} onClick={openModal}>
+          <ImageList image={i.urls.full} />
+        </div>
+    ));
+  };
 
   return (
     <div className="imageContainer">
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
-      <div className="imageList" onClick={openModal}>
-        <ImageList />
-      </div>
+      {renderImageList()}
       <ImageModal open={open} onClose={closeModal} />
     </div>
   );

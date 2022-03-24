@@ -1,11 +1,22 @@
-import React from 'react'
+import React from "react";
 
-import "./index.scss"
+import "./index.scss";
 
-const ImageList = () => {
+const ImageList = (props) => {
+  const { image } = props;
+  console.log(image);
+
   return (
-    <div>ImageList</div>
-  )
-}
+    <div
+      className="imageList"
+      style={{
+        backgroundImage: `url(${image})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    ></div>
+  );
+};
 
-export default ImageList
+export default ImageList;

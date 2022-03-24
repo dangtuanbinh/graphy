@@ -6,21 +6,11 @@
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: spacing(3);
+  column-gap: spacing(3);
 }
 
 /* Responsive */
 @media screen and (max-width: 1024px) {
-  .imageContainer {
-    width: 100%;
-    margin-top: spacing(2);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .imageContainer {
     width: 100%;
     margin-top: spacing(2);

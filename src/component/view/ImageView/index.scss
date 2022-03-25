@@ -1,5 +1,13 @@
 @import "../../../config/config.scss";
 
+.viewContainer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: spacing(2)
+}
 .imageContainer {
   width: 50%;
   margin-top: spacing(2);
@@ -7,8 +15,14 @@
   grid-template-columns: auto auto auto;
   row-gap: spacing(3);
   column-gap: spacing(3);
+  position: relative;
 }
-
+.imageConfig{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 /* Responsive */
 @media screen and (max-width: 1024px) {
   .imageContainer {

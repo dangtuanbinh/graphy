@@ -3,16 +3,10 @@ import "./index.scss"
 
 const filterButton = [
   {
-    title: "All",
+    title: "Most liked",
   },
   {
-    title: "Tags",
-  },
-  {
-    title: "Dinosaur",
-  },
-  {
-    title: "Car",
+    title: "New",
   },
 ];
 
@@ -20,7 +14,7 @@ const FilterBar = () => {
   return (
     <div className="filterBarContainer">
       {filterButton.map((f, index) => (
-        <button key={index} className="button">
+        <button key={index} className="filterButton">
           {f.title}
         </button>
       ))}

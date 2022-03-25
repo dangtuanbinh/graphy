@@ -1,10 +1,10 @@
-import React from "react";
+import React, {memo} from "react";
 
 import "./index.scss";
 
-const ImageList = (props) => {
+const ImageList = memo((props) => {
+  
   const { image } = props;
-  console.log(image);
 
   return (
     <div
@@ -17,6 +17,6 @@ const ImageList = (props) => {
       }}
     ></div>
   );
-};
+});
 
 export default ImageList;

@@ -5,7 +5,7 @@ import { compose } from 'redux';
 import imageReducer from "./reducers/imageReducer"
 
 const reducer = combineReducers({
-    imageReducer
+    imageReducer,
 });
 
 const store = createStore(

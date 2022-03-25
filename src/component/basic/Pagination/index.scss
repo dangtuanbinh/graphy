@@ -1,0 +1,23 @@
+@import "../../../config/config.scss";
+
+.paginationContainer {
+  width: 100%;
+  margin-top: spacing(2);
+  height: spacing(5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+}
+.button {
+  width: spacing(9);
+  height: spacing(5);
+  @include Text($textBlack, $h4,$fwRegular,none);
+  border: spacing(0.09);
+  border-radius: spacing(36);
+  &:hover {
+      background-color: $dark;
+      color: $textWhite;
+  }
+}

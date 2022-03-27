@@ -12,6 +12,7 @@ import SearchBar from "../../basic/SearchBar/SearchBar";
 const ImageView = () => {
   const dispatch = useDispatch();
 
+  const [filterList, setFilterList] = useState([]);
   const [pagination, setPagination] = useState({
     page: 1,
     per_page: 30,
@@ -25,12 +26,14 @@ const ImageView = () => {
   const imageList = useSelector((state) => state.imageReducer.imageList);
   const searchList = useSelector((state) => state.imageReducer.searchList);
 
-  console.log(imageList)
-
   useEffect(() => {
-    const paginationParams = queryString.stringify(filters);
-    dispatch(getImageList(paginationParams));
-  }, [filters, dispatch]);
+    if (filterList.length === 0) {
+      const paginationParams = queryString.stringify(filters);
+      dispatch(getImageList(paginationParams));
+    }
+    setFilterList(imageList);
+    console.log("Unfilter list", filterList)
+  }, [filters, dispatch,imageList]);
 
   const handlePageChange = (newPage) => {
     setFilters({
@@ -44,18 +47,25 @@ const ImageView = () => {
   };
 
   const sortByLikes = () => {
-    console.log("sort by likes");
+    const filterList = imageList
+      .map((i) => i)
+      .sort((a, b) => b.likes - a.likes);
+    setFilterList(filterList);
   };
 
   const sortByDate = () => {
     console.log("sort by dates");
   };
 
+  const all = () => {
+    setFilterList(imageList)
+  }
+
   const renderImageList = () => {
     if (!imageList) return null;
 
     if (searchList.length === 0)
-      return imageList?.map((i) => (
+      return filterList?.map((i) => (
         <div key={i.id} className="imageItem">
           <ImageList image={i.urls.full} id={i.id} data={i} />
         </div>
@@ -69,6 +79,10 @@ const ImageView = () => {
 
   const renderFilterBar = () => {
     const actions = [
+      {
+        name: "All",
+        action: () => all(),
+      },
       {
         name: "Most Liked",
         action: () => sortByLikes(),

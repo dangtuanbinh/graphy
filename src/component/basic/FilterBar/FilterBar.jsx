@@ -1,21 +1,15 @@
 import React from "react";
 import "./index.scss"
 
-const filterButton = [
-  {
-    title: "Most liked",
-  },
-  {
-    title: "New",
-  },
-];
+const FilterBar = (props) => {
 
-const FilterBar = () => {
+  const {actions} = props
+
   return (
     <div className="filterBarContainer">
-      {filterButton.map((f, index) => (
-        <button key={index} className="filterButton">
-          {f.title}
+      {actions.map((a, index) => (
+        <button key={index} className="filterButton" onClick={a.action}>
+          {a.name}
         </button>
       ))}
     </div>

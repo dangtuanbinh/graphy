@@ -4,7 +4,6 @@ import queryString from "query-string";
 
 import "./index.scss";
 import ImageList from "../../list/ImageList/ImageList";
-import ImageModal from "../../modal/ImageModal/ImageModal";
 import FilterBar from "../../basic/FilterBar/FilterBar";
 import { getImageList } from "../../../state/actions/imageAction";
 import Pagination from "../../basic/Pagination/Pagination";
@@ -25,7 +24,9 @@ const ImageView = () => {
 
   const imageList = useSelector((state) => state.imageReducer.imageList);
   const searchList = useSelector((state) => state.imageReducer.searchList);
-  console.log({ searchList, imageList });
+
+  console.log(imageList)
+
   useEffect(() => {
     const paginationParams = queryString.stringify(filters);
     dispatch(getImageList(paginationParams));
@@ -42,26 +43,48 @@ const ImageView = () => {
     });
   };
 
+  const sortByLikes = () => {
+    console.log("sort by likes");
+  };
+
+  const sortByDate = () => {
+    console.log("sort by dates");
+  };
+
   const renderImageList = () => {
     if (!imageList) return null;
 
     if (searchList.length === 0)
       return imageList?.map((i) => (
         <div key={i.id} className="imageItem">
-          <ImageList image={i.urls.full} id={i.id} />
+          <ImageList image={i.urls.full} id={i.id} data={i} />
         </div>
       ));
     return searchList?.map((s) => (
       <div key={s.id} className="imageItem">
-        <ImageList image={s.urls.full} id={s.id} />
+        <ImageList image={s.urls.full} id={s.id} data={s} />
       </div>
     ));
+  };
+
+  const renderFilterBar = () => {
+    const actions = [
+      {
+        name: "Most Liked",
+        action: () => sortByLikes(),
+      },
+      {
+        name: "New",
+        action: () => sortByDate(),
+      },
+    ];
+    return <FilterBar actions={actions} />;
   };
 
   return (
     <div className="viewContainer">
       <div className="imageConfig">
-        <FilterBar />
+        {renderFilterBar()}
         <SearchBar />
       </div>
 

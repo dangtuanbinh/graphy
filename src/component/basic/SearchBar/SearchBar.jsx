@@ -31,7 +31,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="searchBarContainer">
+    <div className="searchBarContainer" data-testid="search">
       <input
         className="input"
         type="text"

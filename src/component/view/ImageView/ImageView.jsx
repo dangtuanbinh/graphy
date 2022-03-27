@@ -13,15 +13,14 @@ import SearchBar from "../../basic/SearchBar/SearchBar";
 const ImageView = () => {
   const dispatch = useDispatch();
 
-  const [open, setOpen] = useState(false);
   const [pagination, setPagination] = useState({
     page: 1,
-    per_page: 9,
+    per_page: 30,
     total: 100,
   });
   const [filters, setFilters] = useState({
     page: 1,
-    per_page: 9,
+    per_page: 30,
   });
 
   const imageList = useSelector((state) => state.imageReducer.imageList);
@@ -43,22 +42,18 @@ const ImageView = () => {
     });
   };
 
-  const openModal = () => setOpen(true);
-
-  const closeModal = () => setOpen(false);
-
   const renderImageList = () => {
     if (!imageList) return null;
 
     if (searchList.length === 0)
       return imageList?.map((i) => (
-        <div key={i.id} onClick={openModal}>
-          <ImageList image={i.urls.full} />
+        <div key={i.id} className="imageItem">
+          <ImageList image={i.urls.full} id={i.id} />
         </div>
       ));
     return searchList?.map((s) => (
-      <div key={s.id} onClick={openModal}>
-        <ImageList image={s.urls.full} />
+      <div key={s.id} className="imageItem">
+        <ImageList image={s.urls.full} id={s.id} />
       </div>
     ));
   };
@@ -72,7 +67,6 @@ const ImageView = () => {
 
       <div className="imageContainer">{renderImageList()}</div>
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
-      <ImageModal open={open} onClose={closeModal} />
     </div>
   );
 };

@@ -42,9 +42,11 @@
   },
   "devDependencies": {
     "axios": "^0.26.1",
+    "jest-dom": "^4.0.0",
     "node-sass": "^7.0.1",
     "query-string": "^7.1.1",
     "react-redux": "^7.2.6",
+    "react-test-renderer": "^17.0.2",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "sass": "^1.49.9",

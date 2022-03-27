@@ -16,19 +16,35 @@
   top: 50%;
 }
 
-.button {
-  width: 90px;
+.paginationButton {
+  width: 70px;
   height: 50px;
-  color: #000000;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: none;
-  border: 0.9px;
-  border-radius: 360px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
 
-.button:hover {
-  background-color: #222222;
-  color: #ffffff;
+.paginationButton:hover {
+  background-color: #f1f1f1;
+  border: 0.9px;
+  border-radius: 200px;
 }
+
+/* Responsive */
+@media screen and (max-width: 820px) {
+  .paginationButton {
+    width: 70px;
+    height: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  .paginationButton:hover {
+    background-color: transparent;
+    border: none;
+    border-radius: none;
+  }
+}
+
+/* End of responsive */
 /*# sourceMappingURL=index.css.map */

@@ -4,4 +4,42 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+  .imageList {
+    width: 200px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageList {
+    width: 180px;
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .imageList {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .imageList {
+    width: 120px;
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .imageList {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+/* End of responsive */
 /*# sourceMappingURL=index.css.map */

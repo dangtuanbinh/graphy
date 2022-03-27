@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: spacing(2)
+  margin-top: spacing(2);
 }
 .imageContainer {
   width: 50%;
@@ -22,9 +22,10 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 /* Responsive */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1338px) {
   .imageContainer {
     width: 100%;
     margin-top: spacing(2);
@@ -33,15 +34,22 @@
     align-items: center;
     flex-wrap: wrap;
   }
+  .imageConfig{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .imageContainer {
     width: 100%;
     margin-top: spacing(2);
-    display: grid;
-    grid-template-columns: auto;
-    row-gap: spacing(3);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 /* End of responsive */

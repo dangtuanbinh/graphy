@@ -1,8 +1,45 @@
 @import "../../../config/config.scss";
 
-.imageList{
-    width: spacing(25);
-    height: spacing(30);
-    border-radius: spacing(1);
-    cursor: pointer;
+.imageList {
+  width: spacing(25);
+  height: spacing(30);
+  border-radius: spacing(1);
+  cursor: pointer;
 }
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+  .imageList {
+    width: spacing(20);
+    height: spacing(35);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageList {
+    width: spacing(18);
+    height: spacing(33);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .imageList {
+    width: spacing(15);
+    height: spacing(20);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .imageList {
+    width: spacing(12);
+    height: spacing(17);
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .imageList {
+    width: spacing(10);
+    height: spacing(15);
+  }
+}
+/* End of responsive */

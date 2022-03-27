@@ -10,14 +10,33 @@
   position: fixed;
   top: 50%;
 }
-.button {
-  width: spacing(9);
+.paginationButton {
+  width: spacing(7);
   height: spacing(5);
-  @include Text($textBlack, $h4,$fwRegular,none);
-  border: spacing(0.09);
-  border-radius: spacing(36);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
   &:hover {
-      background-color: $dark;
-      color: $textWhite;
+      background-color: $light;
+      border: spacing(0.09);
+      border-radius: spacing(20);
   }
 }
+
+/* Responsive */
+@media screen and (max-width: 820px) {
+  .paginationButton {
+    width: spacing(7);
+    height: spacing(5);
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    &:hover {
+        background-color: transparent;
+        border: none;
+        border-radius: none;
+    }
+  }
+}
+
+/* End of responsive */

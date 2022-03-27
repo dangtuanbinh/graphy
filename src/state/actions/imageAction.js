@@ -36,4 +36,20 @@ export const searchImageList = (queryParams) => {
     }
 }
 
+export const getSingleImage = (id) => {
+    return (dispatch) => {
+        connector({
+            url: `https://api.unsplash.com/photos/:${id}/?client_id=${client_id}`,
+            method: "GET",
+            data: null,
+        }).then((res) => {
+                dispatch({
+                    type: "GET_SINGLE_IMAGE",
+                    payload: res.data
+                })
+        }).catch((err) => {
+            console.log(err)
+        });
+    }
+}
 

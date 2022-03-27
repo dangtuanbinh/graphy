@@ -1,4 +1,6 @@
 import React from "react";
+import {GrNext} from "react-icons/gr"
+import {GrPrevious} from "react-icons/gr"
 
 import "./index.scss";
 
@@ -14,19 +16,19 @@ const Pagination = (props) => {
   return (
     <div className="paginationContainer">
       <button
-        className="button"
+        className="paginationButton"
         disabled={page <= 1}
         onClick={() => handlePageChange(page - 1)}
       >
-        Prev
+        <GrPrevious size={30}/>
       </button>
 
       <button
-        className="button"
+        className="paginationButton"
         disabled={page >= totalPages}
         onClick={() => handlePageChange(page + 1)}
       >
-        Next
+        <GrNext size={30}/>
       </button>
     </div>
   );

@@ -1,6 +1,7 @@
 const initialState = {
   imageList: [],
   searchList: [],
+  singleImage: null
 };
 
 const imageReducer = (state = initialState, actions) => {
@@ -10,6 +11,9 @@ const imageReducer = (state = initialState, actions) => {
     }
     case "SEARCH_IMAGE_LIST": {
       return { ...state, searchList: actions.payload.results };
+    }
+    case "GET_SINGLE_IMAGE": {
+      return {...state, singleImage: actions.payload}
     }
     default:
       return state;

@@ -32,18 +32,19 @@ const SearchBar = () => {
 
   return (
     <div className="searchBarContainer">
-      <form className="form" onSubmit={onSubmit}>
-        <input
-          className="input"
-          type="text"
-          placeholder="Search for Images"
-          value={search}
-          onChange={handleSearch}
-        />
-      </form>
+      <input
+        className="input"
+        type="text"
+        placeholder="Search for Images (E.g.office,car,cat...)"
+        value={search}
+        onChange={handleSearch}
+        onSubmit={onSubmit}
+      />
 
-      <div className="icon" onClick={onSubmit}>
-        <AiOutlineSearch size={35} />
+      <div className="icon">
+        <button type="submit" onClick={onSubmit} className="submitButton">
+          <AiOutlineSearch size={35} />
+        </button>
       </div>
     </div>
   );

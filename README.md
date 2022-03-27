@@ -13,12 +13,12 @@ This repo creates a web application that utilizes Reactjs for Front-end and Unsp
 2. Direct to folder that holds the project
 
 3. Run 
-    `npm i` of `yarn i`
+    `npm i` or `yarn i`
 
 3. Run the application in browser
     `npm start`
         or
     `yarn start`
-    
+
 4. In case running test
     `yarn test`
